@@ -1,2 +1,27 @@
 /* Optional overrides for the portable prototype.
 	All primary styling lives in ./assets/main.css (copied from CTFd core theme). */
+
+body {
+	background-color: var(--bs-body-bg);
+	background-image: url("./Tallinn.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 1300px 650px;
+	background-attachment: fixed;
+}
+
+/* Remove the “Challenges” backgrounds so the page background shows through */
+.jumbotron {
+	background-color: transparent;
+}
+
+/* Make challenge tiles transparent on hover */
+[data-bs-theme] .challenge-button:hover,
+[data-bs-theme] .challenge-button:focus-visible {
+	background-color: transparent;
+}
+
+[data-bs-theme] .solved_challenge-button:hover,
+[data-bs-theme] .solved_challenge-button:focus-visible {
+	background-color: transparent;
+}
