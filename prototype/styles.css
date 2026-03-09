@@ -25,3 +25,17 @@ body {
 [data-bs-theme] .solved_challenge-button:focus-visible {
 	background-color: transparent;
 }
+
+/* Keep profile title + scoreboard link away from the background image hotspot */
+.profile-hero {
+	max-width: 720px;
+	transform: translateY(-0.6rem);
+}
+
+.scoreboard-hero {
+	transform: translateY(-1.2rem);
+}
+
+.users-hero {
+	transform: translateY(-1.2rem);
+}
