@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CTFd - Login</title>
+    <link rel="stylesheet" href="assets/main.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">DireftcatiCTF</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          aria-controls="base-navbars"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="base-navbars">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="users.html">Users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="scoreboard.html">Scoreboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Challenges</a>
+            </li>
+          </ul>
+
+          <hr class="d-sm-flex d-md-flex d-lg-none" />
+
+          <ul class="navbar-nav ms-md-auto d-block d-sm-flex d-md-flex">
+            <li class="nav-item">
+              <a class="nav-link" href="team.html">
+                <i class="fas fa-users pe-1"></i>
+                Team
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">
+                <i class="fas fa-user-circle pe-1"></i>
+                Profile
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="login.html">
+                <i class="fas fa-sign-in-alt pe-1"></i>
+                Login
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main role="main">
+      <div class="container" style="padding-top: 9.5rem; padding-bottom: 3rem;">
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-5">
+            <div class="card bg-dark border-secondary">
+              <div class="card-body p-5">
+                <h3 class="text-center mb-4">Login</h3>
+
+                <form id="login-form" method="POST" action="/login">
+                  <div id="results" class="alert d-none" role="alert"></div>
+
+                  <div class="mb-3">
+                    <label for="name" class="form-label">
+                      Username or Email
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      name="name"
+                      placeholder="Username or Email"
+                      required
+                      autofocus
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="password" class="form-label">
+                      Password
+                    </label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      name="password"
+                      placeholder="Password"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-check mb-3">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="remember"
+                      name="remember"
+                    />
+                    <label class="form-check-label" for="remember">
+                      Remember Me
+                    </label>
+                  </div>
+
+                  <div class="d-grid mb-3">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                      Login
+                    </button>
+                  </div>
+
+                  <div class="text-center">
+                    <a href="register.html" class="text-decoration-none">
+                      Don't have an account? Register
+                    </a>
+                  </div>
+
+                  <div class="text-center mt-2">
+                    <a href="reset-password.html" class="text-decoration-none small">
+                      Forgot your password?
+                    </a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // Placeholder script, currently not functional.
+      document.getElementById('login-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const resultsElement = document.getElementById('results');
+        const formData = new FormData(this);
+        
+        try {
+          const response = await fetch('/login', {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json',
+            },
+          });
+          
+          const data = await response.json();
+          
+          if (response.ok && data.success) {
+            resultsElement.textContent = 'Login successful! Redirecting...';
+            resultsElement.className = 'alert alert-success';
+            resultsElement.classList.remove('d-none');
+            
+            // Redirect after successful login
+            setTimeout(() => {
+              window.location.href = data.redirect || '/challenges';
+            }, 1000);
+          } else {
+            resultsElement.textContent = data.errors?.join(', ') || 'Invalid username or password';
+            resultsElement.className = 'alert alert-danger';
+            resultsElement.classList.remove('d-none');
+          }
+        } catch (error) {
+          resultsElement.textContent = 'An error occurred. Please try again.';
+          resultsElement.className = 'alert alert-danger';
+          resultsElement.classList.remove('d-none');
+        }
+      });
+    </script>
+  </body>
+</html>
