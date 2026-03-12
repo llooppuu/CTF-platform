@@ -18,7 +18,8 @@ export default defineConfig({
       "/teams": { target: backend, changeOrigin: true },
       "/users": { target: backend, changeOrigin: true },
       "/confirm": { target: backend, changeOrigin: true },
-      "/reset_password": { target: backend, changeOrigin: true }
+      "/reset_password": { target: backend, changeOrigin: true },
+      "/setup": { target: backend, changeOrigin: true }
     }
   }
 });
