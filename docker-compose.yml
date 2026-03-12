@@ -1,0 +1,30 @@
+services:
+  ctfd:
+    image: ctfd/ctfd:latest
+    container_name: ctfd
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - ctfd_uploads:/var/uploads
+      - ctfd_logs:/var/log/CTFd
+
+  ctfd-init:
+    image: python:3.12-alpine
+    container_name: ctfd-init
+    restart: "no"
+    depends_on:
+      - ctfd
+    env_file:
+      - ./docker/ctfd/.env.ctfd
+    volumes:
+      - ./docker/ctfd/bootstrap.py:/bootstrap.py:ro
+    command: >
+      sh -c "
+      pip install --no-cache-dir requests beautifulsoup4 >/dev/null &&
+      python /bootstrap.py
+      "
+
+volumes:
+  ctfd_uploads:
+  ctfd_logs:
