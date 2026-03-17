@@ -1,0 +1,378 @@
+:root {
+  color-scheme: light;
+  --ctfd-navy: #1f2d3d;
+  --ctfd-gold: #f0b429;
+  --ctfd-bg: #f3f5f7;
+}
+
+body {
+  background: var(--ctfd-bg);
+  color: #1a1f24;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.ctfd-navbar {
+  background: var(--ctfd-navy);
+}
+
+.ctfd-navbar .navbar-brand,
+.ctfd-navbar .nav-link,
+.ctfd-navbar .navbar-toggler {
+  color: #fff;
+}
+
+.ctfd-navbar .nav-link.active {
+  color: var(--ctfd-gold);
+}
+
+.hero-panel {
+  background: linear-gradient(145deg, rgba(255,255,255,0.98), rgba(245,247,250,0.95));
+}
+
+.quick-info-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0.75rem 1rem;
+}
+
+.quick-info-grid dt,
+.quick-info-grid dd {
+  margin: 0;
+}
+
+.auth-container {
+  max-width: 960px;
+}
+
+.auth-card {
+  max-width: 580px;
+}
+
+.ops-panel {
+  top: 88px;
+}
+
+.attack-map-shell {
+  background: #fff;
+}
+
+.attack-map-toolbar {
+  padding: 0.9rem 1.25rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid rgba(31, 45, 61, 0.08);
+}
+
+.map-scroll-frame {
+  position: relative;
+  height: min(76vh, 880px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  cursor: grab;
+  background: #d7e0ea;
+  user-select: none;
+  touch-action: none;
+}
+
+.map-scroll-frame.is-dragging {
+  cursor: grabbing;
+}
+
+.map-scroll-frame::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.map-scroll-frame::-webkit-scrollbar-thumb {
+  background: rgba(31, 45, 61, 0.32);
+  border-radius: 999px;
+}
+
+.map-scroll-frame::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.map-world {
+  position: relative;
+  width: 1800px;
+  height: 1120px;
+  background-image:
+    linear-gradient(rgba(6, 16, 28, 0.18), rgba(6, 16, 28, 0.18)),
+    url("/assets/tallinn-panorama.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.map-world::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 24%);
+  pointer-events: none;
+}
+
+.map-world-grid {
+  display: none;
+}
+
+.map-image-shell {
+  position: absolute;
+  z-index: 1;
+}
+
+.map-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.2));
+}
+
+.markers-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+.county-label-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.county-name-chip {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #111827;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(31, 45, 61, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+}
+
+.challenge-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.marker-dot {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--marker-color, #0d6efd);
+  border: 3px solid rgba(255,255,255,0.92);
+  box-shadow: 0 0 0 6px rgba(15, 23, 42, 0.16);
+}
+
+.challenge-marker.is-selected .marker-dot {
+  transform: scale(1.18);
+  box-shadow: 0 0 0 8px rgba(240, 180, 41, 0.28);
+}
+
+.marker-label {
+  display: inline-block;
+  margin-top: 0.45rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.88);
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.15;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
+  max-width: 140px;
+}
+
+.admin-map-scroll {
+  overflow: auto;
+  max-height: 70vh;
+  background: #eef2f6;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(31, 45, 61, 0.12);
+}
+
+.admin-map-shell {
+  position: relative;
+  width: 1280px;
+  height: 905px;
+  cursor: crosshair;
+}
+
+.admin-map-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.admin-markers-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.admin-map-marker {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--marker-color, #0d6efd);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.admin-map-marker.is-selected {
+  width: 14px;
+  height: 14px;
+  box-shadow: 0 0 0 4px rgba(240, 180, 41, 0.4);
+}
+
+.admin-map-cursor-marker {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: #f0b429;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.2);
+  cursor: grab;
+  pointer-events: auto;
+}
+
+.admin-map-cursor-marker:active {
+  cursor: grabbing;
+}
+
+.admin-map-cursor-marker.is-locked {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.scoreboard-bar-track {
+  height: 12px;
+  border-radius: 999px;
+  background: #e9edf2;
+  overflow: hidden;
+}
+
+.scoreboard-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0d6efd, #20c997);
+}
+
+.announcement-toast {
+  position: fixed;
+  right: 18px;
+  top: 84px;
+  z-index: 2100;
+  width: min(360px, calc(100vw - 36px));
+}
+
+.announcement-bubble {
+  position: fixed;
+  right: 18px;
+  bottom: 24px;
+  z-index: 2090;
+}
+
+.announcement-panel {
+  position: fixed;
+  right: 18px;
+  bottom: 78px;
+  width: min(420px, calc(100vw - 36px));
+  max-height: 55vh;
+  overflow: auto;
+  background: #f8fafc;
+  border: 1px solid rgba(31, 45, 61, 0.16);
+  border-radius: 0.9rem;
+  padding: 0.75rem;
+  z-index: 2095;
+}
+
+.challenge-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 16, 24, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 2000;
+}
+
+.challenge-modal {
+  width: min(860px, 100%);
+  max-height: 90vh;
+}
+
+.modal-scroll {
+  overflow: auto;
+}
+
+.challenge-html img {
+  max-width: 100%;
+}
+
+.challenge-html pre,
+.font-monospace {
+  white-space: pre-wrap;
+}
+
+.challenge-html pre {
+  background: #111827;
+  color: #f8fafc;
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+
+.hint-box {
+  background: #fff;
+  border: 1px solid rgba(31, 45, 61, 0.12);
+  border-radius: 0.75rem;
+  padding: 0.9rem 1rem;
+}
+
+.admin-list {
+  max-height: 70vh;
+  overflow: auto;
+}
+
+@media (max-width: 991.98px) {
+  .map-scroll-frame {
+    height: 68vh;
+  }
+
+  .map-world {
+    width: 1500px;
+    height: 980px;
+  }
+
+  .map-image-shell {
+    left: 220px !important;
+    top: 90px !important;
+    width: 1040px !important;
+    height: 735px !important;
+  }
+
+  .marker-label {
+    max-width: 105px;
+    font-size: 0.66rem;
+  }
+}

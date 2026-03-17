@@ -1,0 +1,9 @@
+services:
+  app:
+    image: node:20-alpine
+    working_dir: /app
+    command: sh -c "cd Test/ctfd-react-frontend && npm install && npm run build && cd /app && node backend/server.js"
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./:/app
