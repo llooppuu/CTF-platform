@@ -17,7 +17,8 @@ Täisstack starter, mis jätab üldise visuaali klassikalise CTFd moodi, aga cha
 ## Kaustad
 
 - `backend/` – API ja andmete püsisalvestus (`backend/data/db.json`)
-- `Test/ctfd-react-frontend/` – Vite + React frontend
+- `ctfd-react-frontend/` – Vite + React frontend
+- `ctfd-react-frontend/prototype/` – staatiline HTML/CSS prototüüp assignmenti jaoks
 
 ## Kiire käivitus
 
@@ -33,7 +34,7 @@ node server.js
 Terminal 2:
 
 ```bash
-cd Test/ctfd-react-frontend
+cd ctfd-react-frontend
 npm install
 npm run dev
 ```
@@ -44,7 +45,7 @@ Backend: `http://localhost:4000`
 ### Variant B – üks builditud server
 
 ```bash
-cd Test/ctfd-react-frontend
+cd ctfd-react-frontend
 npm install
 npm run build
 cd ../..
@@ -105,14 +106,23 @@ Kõik salvestatakse faili:
 
 See tähendab, et mängu saab kohe kasutada ja vajadusel ka käsitsi seedida.
 
+## Nõuete katvus
+
+- Rakenduse idee: Eesti kaardiga CTF platvorm, kus challenge'id avanevad kaardilt ja tulemused jooksevad punktitabelisse.
+- HTML/CSS prototüüp: staatiline näidis asub kaustas `ctfd-react-frontend/prototype/`.
+- React komponendid: rakendus on jaotatud lehtedeks ja komponentideks `ctfd-react-frontend/src/` all.
+- `useState` ja sündmuste töötlus: vormid, modalid ja admin-liides kasutavad interaktiivset olekut.
+- Dünaamilised järjendid ja tingimuslik renderdus: challenge'id, teated ja punktitabel renderdatakse massiividest ning loading/error/solved seisud kuvatakse tingimuslikult.
+- `useRef`: kaardikomponentides kasutatakse DOM-viiteid lohistamise ja vaate joondamise jaoks.
+- `useEffect`: andmete laadimine ja sessiooni/perioodiline uuendamine toimuvad efektidega.
+- HTTP päringud: `fetch`-põhine API kiht asub failis `ctfd-react-frontend/src/lib/api.js`.
+- `useContext`: globaalne rakenduse olek on jagatud `AppContext` kaudu.
+- `useReducer`: challenge-vaate olekuhaldus on koondatud reducerisse failis `ctfd-react-frontend/src/pages/ChallengesPage.jsx`.
+
 ## Tallinna taustafoto atribuutika
 
-Kaasatud pilt: **Night skyline in Tallinn, February 2013**
-
-- autor: **Mb-world**
-- litsents: **CC BY-SA 3.0**
-- allikas: Wikimedia Commons
+Kaasatud pilt: **Christopheri äge pildike Tallinnast**
 
 ## Eesti kaardi andmed
 
-Kaardi outline on lisatud GeoJSON failina `Test/ctfd-react-frontend/public/estonia.geojson`.
+Kaardi outline on lisatud GeoJSON failina `ctfd-react-frontend/public/estonia.geojson`.

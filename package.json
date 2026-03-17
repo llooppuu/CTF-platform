@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev:frontend": "npm --prefix Test/ctfd-react-frontend run dev",
+    "dev:frontend": "npm --prefix ctfd-react-frontend run dev",
     "dev:backend": "node backend/server.js",
-    "build": "npm --prefix Test/ctfd-react-frontend run build",
+    "build": "npm --prefix ctfd-react-frontend run build",
     "start": "node backend/server.js"
   }
 }

@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 const dbPath = path.join(__dirname, "data", "db.json");
-const frontendDist = path.join(rootDir, "Test", "ctfd-react-frontend", "dist");
+const frontendDist = path.join(rootDir, "ctfd-react-frontend", "dist");
 const port = Number(process.env.PORT || 4000);
 const devOrigin = process.env.CORS_ORIGIN || "http://localhost:5173";
 

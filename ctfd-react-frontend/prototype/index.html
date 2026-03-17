@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="et">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eesti Attack Map CTF Prototype</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">Eesti Attack Map CTF</div>
+        <nav class="menu">
+          <a href="#avaleht">Avaleht</a>
+          <a href="#challenges">Challenges</a>
+          <a href="#scoreboard">Scoreboard</a>
+          <a href="#login">Logi sisse</a>
+        </nav>
+      </header>
+
+      <main class="page">
+        <section class="hero" id="avaleht">
+          <div class="hero-copy">
+            <p class="eyebrow">Rakenduse idee</p>
+            <h1>CTF platvorm, kus ülesanded paiknevad Eesti kaardil</h1>
+            <p>
+              Kasutaja saab challenge'e filtreerida, avada detailvaate, saata flag'e ning jälgida punktitabelit.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#challenges">Ava challenge'id</a>
+              <a class="button button-secondary" href="#login">Loo konto</a>
+            </div>
+          </div>
+          <div class="hero-card">
+            <h2>Kiirinfo</h2>
+            <ul>
+              <li>Režiim: Solo</li>
+              <li>Kaardivaade: Eesti</li>
+              <li>Punktid: dünaamiline punktitabel</li>
+              <li>Admin: challenge'ite haldus</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="content-grid">
+          <section class="panel" id="login">
+            <p class="eyebrow">Vorm</p>
+            <h2>Logi sisse</h2>
+            <form class="form">
+              <label>
+                Kasutajanimi
+                <input type="text" placeholder="sisesta kasutajanimi" />
+              </label>
+              <label>
+                Parool
+                <input type="password" placeholder="sisesta parool" />
+              </label>
+              <button type="button" class="button button-primary">Sisene</button>
+            </form>
+          </section>
+
+          <section class="panel map-preview" id="challenges">
+            <p class="eyebrow">Põhivaade</p>
+            <h2>Challenge map</h2>
+            <div class="map-surface">
+              <div class="map-pin solved">web</div>
+              <div class="map-pin active">crypto</div>
+              <div class="map-pin">forensics</div>
+            </div>
+          </section>
+        </section>
+
+        <section class="panel" id="scoreboard">
+          <p class="eyebrow">Järjend</p>
+          <h2>Populaarsed challenge'id</h2>
+          <div class="card-list">
+            <article class="challenge-card solved">
+              <div>
+                <h3>Harju Web 01</h3>
+                <p>Veebiturbe challenge, staatus: lahendatud.</p>
+              </div>
+              <span>100 p</span>
+            </article>
+            <article class="challenge-card">
+              <div>
+                <h3>Tartu Crypto 02</h3>
+                <p>Krüptoülesanne, staatus: aktiivne.</p>
+              </div>
+              <span>200 p</span>
+            </article>
+            <article class="challenge-card">
+              <div>
+                <h3>Narva Forensics 03</h3>
+                <p>Digitaalse uurimise challenge, staatus: avamata.</p>
+              </div>
+              <span>150 p</span>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Staatiline HTML/CSS prototüüp React rakenduse eelvaateks.</span>
+        <span>Komponendid: menüü, vorm, kaardid, loend, jalus.</span>
+      </footer>
+    </div>
+  </body>
+</html>

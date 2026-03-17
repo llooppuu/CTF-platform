@@ -1,0 +1,245 @@
+:root {
+  --navy: #1f2d3d;
+  --gold: #f0b429;
+  --mist: #eef3f8;
+  --ink: #17202a;
+  --card: rgba(255, 255, 255, 0.92);
+  --success: #1f9d55;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--ink);
+  background:
+    linear-gradient(rgba(11, 28, 44, 0.72), rgba(11, 28, 44, 0.72)),
+    url("../public/assets/tallinn-panorama.jpg") center / cover fixed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar,
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: rgba(31, 45, 61, 0.94);
+  color: #fff;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.menu a {
+  opacity: 0.9;
+}
+
+.page {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 2rem auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero,
+.content-grid,
+.panel {
+  border-radius: 24px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+.hero-copy,
+.hero-card,
+.panel {
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 40px rgba(8, 18, 31, 0.24);
+}
+
+.hero-copy,
+.hero-card,
+.panel {
+  padding: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #8a5d00;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin-top: 0;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.button-primary {
+  background: var(--gold);
+  color: #1f2d3d;
+}
+
+.button-secondary {
+  border-color: rgba(31, 45, 61, 0.2);
+  background: #fff;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form label {
+  display: grid;
+  gap: 0.45rem;
+  font-weight: 600;
+}
+
+.form input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(31, 45, 61, 0.16);
+  background: #fff;
+}
+
+.map-surface {
+  position: relative;
+  min-height: 280px;
+  border-radius: 18px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(31, 45, 61, 0.18), rgba(31, 45, 61, 0.18)),
+    url("../public/assets/estonia-admin-map.png") center / cover no-repeat;
+}
+
+.map-pin {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 76px;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 0.85rem;
+  box-shadow: 0 10px 24px rgba(16, 26, 40, 0.24);
+}
+
+.map-pin:nth-child(1) {
+  top: 28%;
+  left: 24%;
+}
+
+.map-pin:nth-child(2) {
+  top: 42%;
+  left: 54%;
+}
+
+.map-pin:nth-child(3) {
+  top: 62%;
+  left: 68%;
+}
+
+.map-pin.active {
+  background: #0056d6;
+}
+
+.map-pin.solved {
+  background: var(--success);
+}
+
+.card-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.challenge-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  background: var(--mist);
+  border: 1px solid rgba(31, 45, 61, 0.08);
+}
+
+.challenge-card.solved {
+  border-color: rgba(31, 157, 85, 0.35);
+  background: rgba(31, 157, 85, 0.12);
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .content-grid,
+  .topbar,
+  .footer {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page {
+    width: min(100%, calc(100% - 1rem));
+    margin: 1rem auto;
+  }
+}
