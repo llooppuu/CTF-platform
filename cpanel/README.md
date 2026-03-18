@@ -2,6 +2,12 @@
 
 This folder contains a PHP port of the Node backend so the app can run on a standard Apache + PHP cPanel host without requiring Node.js on the server.
 
+The deploy target is a self-contained subdirectory app:
+
+- `/public_html/CTF/`
+
+Nothing outside that `CTF` folder is required for the app to run.
+
 ## What is included
 
 - `public_html/CTF/api/index.php` – PHP API entrypoint mirroring the current `/api/*` contract
@@ -24,6 +30,14 @@ VITE_PUBLIC_BASE=/CTF/ npm --prefix ctfd-react-frontend run build
 ```
 
 After that, upload the contents of `cpanel/public_html/CTF/` into your cPanel `/public_html/CTF/` directory.
+
+Your cPanel root can stay minimal:
+
+```text
+public_html/
+  CTF/
+    ...
+```
 
 ## Notes
 

@@ -1,320 +1,315 @@
 {
-    "settings": {
-        "siteTitle": "CTF ITA",
-        "registrationOpen": true,
-        "announcement": "Lisa uued challenge'id admin-paneelist ja m\u00e4ng on valmis.",
-        "startTime": "",
-        "endTime": "",
-        "challengeVisibility": "private",
-        "accountVisibility": "public",
-        "scoreVisibility": "public",
-        "registrationVisibility": "public",
-        "paused": false,
-        "registrationCode": "",
-        "logoUrl": "",
-        "theme": "default",
-        "localization": "en",
-        "customFields": [],
-        "scoreboardBrackets": [],
-        "sanitizeHtml": true
+  "settings": {
+    "siteTitle": "CTF ITA",
+    "registrationOpen": true,
+    "announcement": "Lisa uued challenge'id admin-paneelist ja mäng on valmis.",
+    "startTime": "",
+    "endTime": "",
+    "challengeVisibility": "private",
+    "accountVisibility": "public",
+    "scoreVisibility": "public",
+    "registrationVisibility": "public",
+    "paused": false,
+    "registrationCode": "",
+    "logoUrl": "",
+    "theme": "default",
+    "localization": "en",
+    "customFields": [],
+    "scoreboardBrackets": [],
+    "sanitizeHtml": true
+  },
+  "users": [
+    {
+      "id": "544983f2-af58-413d-9ad4-88803849ebd5",
+      "username": "admin",
+      "displayName": "Administrator",
+      "email": "admin@example.com",
+      "bio": "Seed admin account",
+      "passwordHash": "60ab309cd49d0e57f122a1617748f7fe:d1a54a88562b14f23b38a52431b8e4e3343935b40052472eed3314c3b7c6e756f03b1ede1d35064108c5951ccbdbfd7d29c06d29d6ee8457f88a531568d10e82",
+      "isAdmin": true,
+      "createdAt": "2026-03-17T09:30:47.786Z"
     },
-    "users": [
+    {
+      "id": "4b9ad37d-e2d5-4869-b618-6706f3a1f250",
+      "username": "test",
+      "displayName": "test",
+      "email": "test@mail",
+      "bio": "",
+      "passwordHash": "f3453ce9381dc2a8a9dae2d9955c327b:7703887f7b4bf29b5a3d2f659184c3fae72d5fffbe0af04b40550d9ac0d226e8ccfc11e5a7ac813d6feba14e12eea1a233a0809a2c73a419a7b2293063510f4b",
+      "isAdmin": false,
+      "createdAt": "2026-03-17T11:12:27.083Z"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "764be0c0fad2d46d182937685dfbeaad7a97d41d1e1dc56d389bf36603747a83",
+      "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
+      "createdAt": "2026-03-17T09:32:03.262Z"
+    },
+    {
+      "token": "99fa8f34b7346e7c6e2838972cb3d3013bf6a7669389ea49b02ad31abbbb22d3",
+      "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
+      "createdAt": "2026-03-17T11:13:30.774Z"
+    },
+    {
+      "token": "3c12631c8ff30ac0a741c8185fd2fdd85b0705a81ad520474252b814a456c40e",
+      "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
+      "createdAt": "2026-03-17T11:37:19.737Z"
+    },
+    {
+      "token": "402db70d6fa1e5b3ab3bfee8fd8f1d7c8da8073015fa4829883fb75a5d190e91",
+      "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
+      "createdAt": "2026-03-17T18:49:56.550Z"
+    },
+    {
+      "token": "5073a4b6b7726955c1dc9233b89dae9383624e4f73e033a4f26d3e495b81427a",
+      "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
+      "createdAt": "2026-03-17T19:35:00.819Z"
+    }
+  ],
+  "challenges": [
+    {
+      "id": "chal-web-1",
+      "slug": "tallinn-terminal",
+      "title": "Tallinn Terminal",
+      "category": "web",
+      "difficulty": "easy",
+      "points": 100,
+      "description": "<p>Leia terminali veebirakendusest peidetud admin-paneel ja too välja flag.</p><p><strong>Näidis:</strong> siia saad hiljem lisada oma reaalse ülesande HTML-i.</p>",
+      "flag": "flag{tallinn_terminal}",
+      "lat": 59.389102,
+      "lng": 25.589374,
+      "tags": [
+        "starter",
+        "http"
+      ],
+      "files": [],
+      "hints": [
         {
-            "id": "544983f2-af58-413d-9ad4-88803849ebd5",
-            "username": "admin",
-            "displayName": "Administrator",
-            "email": "admin@example.com",
-            "bio": "Seed admin account",
-            "passwordHash": "pbkdf2_sha256$210000$fdd39a46e0e2ff86b2f6154069efb59a$270ef51bf0499fb2042422bcf8d5b34d42dc36abeda217fd30719aee3ccaf049",
-            "isAdmin": true,
-            "createdAt": "2026-03-17T09:30:47.786Z"
-        },
-        {
-            "id": "4b9ad37d-e2d5-4869-b618-6706f3a1f250",
-            "username": "test",
-            "displayName": "test",
-            "email": "test@mail",
-            "bio": "",
-            "passwordHash": "f3453ce9381dc2a8a9dae2d9955c327b:7703887f7b4bf29b5a3d2f659184c3fae72d5fffbe0af04b40550d9ac0d226e8ccfc11e5a7ac813d6feba14e12eea1a233a0809a2c73a419a7b2293063510f4b",
-            "isAdmin": false,
-            "createdAt": "2026-03-17T11:12:27.083Z"
+          "id": "hint-web-1",
+          "title": "Hint 1",
+          "cost": 10,
+          "content": "<p>Vaata HTTP vastuseid ja peidetud route'e.</p>"
         }
-    ],
-    "sessions": [
+      ],
+      "visible": true,
+      "createdAt": "2026-03-17T00:00:00.000Z",
+      "positionLocked": false
+    },
+    {
+      "id": "chal-crypto-1",
+      "slug": "narva-noise",
+      "title": "Narva Noise",
+      "category": "crypto",
+      "difficulty": "medium",
+      "points": 200,
+      "description": "<p>Raadiojaamast püütud sõnum kasutab nõrka võtme-taaskasutust. Murra see lahti.</p>",
+      "flag": "flag{narva_noise}",
+      "lat": 59.3772,
+      "lng": 28.1903,
+      "tags": [
+        "xor",
+        "radio"
+      ],
+      "files": [
         {
-            "token": "764be0c0fad2d46d182937685dfbeaad7a97d41d1e1dc56d389bf36603747a83",
-            "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
-            "createdAt": "2026-03-17T09:32:03.262Z"
-        },
-        {
-            "token": "99fa8f34b7346e7c6e2838972cb3d3013bf6a7669389ea49b02ad31abbbb22d3",
-            "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
-            "createdAt": "2026-03-17T11:13:30.774Z"
-        },
-        {
-            "token": "3c12631c8ff30ac0a741c8185fd2fdd85b0705a81ad520474252b814a456c40e",
-            "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
-            "createdAt": "2026-03-17T11:37:19.737Z"
-        },
-        {
-            "token": "402db70d6fa1e5b3ab3bfee8fd8f1d7c8da8073015fa4829883fb75a5d190e91",
-            "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
-            "createdAt": "2026-03-17T18:49:56.550Z"
-        },
-        {
-            "token": "5073a4b6b7726955c1dc9233b89dae9383624e4f73e033a4f26d3e495b81427a",
-            "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
-            "createdAt": "2026-03-17T19:35:00.819Z"
-        },
-        {
-            "token": "3036025c2bca625532fa952ad90db8c30697045d34635b9ebbe8b9f989feb537",
-            "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
-            "createdAt": "2026-03-18T07:20:56.428Z"
+          "label": "cipher.txt",
+          "url": "https://example.com/cipher.txt"
         }
-    ],
-    "challenges": [
+      ],
+      "hints": [
         {
-            "id": "chal-web-1",
-            "slug": "tallinn-terminal",
-            "title": "Tallinn Terminal",
-            "category": "web",
-            "difficulty": "easy",
-            "points": 100,
-            "description": "<p>Leia terminali veebirakendusest peidetud admin-paneel ja too v\u00e4lja flag.</p><p><strong>N\u00e4idis:</strong> siia saad hiljem lisada oma reaalse \u00fclesande HTML-i.</p>",
-            "flag": "flag{tallinn_terminal}",
-            "lat": 59.389102,
-            "lng": 25.589374,
-            "tags": [
-                "starter",
-                "http"
-            ],
-            "files": [],
-            "hints": [
-                {
-                    "id": "hint-web-1",
-                    "title": "Hint 1",
-                    "cost": 10,
-                    "content": "<p>Vaata HTTP vastuseid ja peidetud route'e.</p>"
-                }
-            ],
-            "visible": true,
-            "createdAt": "2026-03-17T00:00:00.000Z",
-            "positionLocked": false
-        },
-        {
-            "id": "chal-crypto-1",
-            "slug": "narva-noise",
-            "title": "Narva Noise",
-            "category": "crypto",
-            "difficulty": "medium",
-            "points": 200,
-            "description": "<p>Raadiojaamast p\u00fc\u00fctud s\u00f5num kasutab n\u00f5rka v\u00f5tme-taaskasutust. Murra see lahti.</p>",
-            "flag": "flag{narva_noise}",
-            "lat": 59.3772,
-            "lng": 28.1903,
-            "tags": [
-                "xor",
-                "radio"
-            ],
-            "files": [
-                {
-                    "label": "cipher.txt",
-                    "url": "https://example.com/cipher.txt"
-                }
-            ],
-            "hints": [
-                {
-                    "id": "hint-crypto-1",
-                    "title": "Hint 1",
-                    "cost": 15,
-                    "content": "<p>Sama v\u00f5tmega on kr\u00fcptitud mitu teadet.</p>"
-                }
-            ],
-            "visible": true,
-            "createdAt": "2026-03-17T00:00:00.000Z"
-        },
-        {
-            "id": "chal-pwn-1",
-            "slug": "saaremaa-shell",
-            "title": "Saaremaa Shell",
-            "category": "pwn",
-            "difficulty": "hard",
-            "points": 350,
-            "description": "<p>R\u00fcnda vana teenust ning saa shell. Selle challi koordinaat on meelega mere kohal, et testida Tallinna fallbacki.</p>",
-            "flag": "flag{saaremaa_shell}",
-            "lat": 58.95,
-            "lng": 21.6,
-            "tags": [
-                "buffer overflow"
-            ],
-            "files": [],
-            "hints": [],
-            "visible": true,
-            "createdAt": "2026-03-17T00:00:00.000Z"
-        },
-        {
-            "id": "chal-forensics-1",
-            "slug": "tartu-trace",
-            "title": "Tartu Trace",
-            "category": "forensics",
-            "difficulty": "easy",
-            "points": 120,
-            "description": "<p>Anal\u00fc\u00fcsi m\u00e4ludumpi ja leia kasutatud pahavara p\u00fcsivusmehhanism.</p>",
-            "flag": "flag{tartu_trace}",
-            "lat": 58.43512,
-            "lng": 27.123373,
-            "tags": [
-                "memory",
-                "volatility"
-            ],
-            "files": [],
-            "hints": [],
-            "visible": true,
-            "createdAt": "2026-03-17T00:00:00.000Z",
-            "positionLocked": false
-        },
-        {
-            "id": "717800dd-4c77-48c7-89e8-f7ae06a73394",
-            "title": "Test",
-            "slug": "test",
-            "category": "misc",
-            "difficulty": "easy",
-            "points": 10000000000000,
-            "description": "tetedtsgdsgdsdg8.3633850452709, 26.711146982134615",
-            "flag": "flag{test}",
-            "lat": 58.386611,
-            "lng": 26.38631,
-            "tags": [
-                "Test",
-                "Admin"
-            ],
-            "files": [],
-            "hints": [],
-            "visible": true,
-            "createdAt": "2026-03-17T11:23:15.721Z",
-            "positionLocked": false
-        },
-        {
-            "id": "bcb9f955-9dae-40e3-936b-478b11109e18",
-            "title": "test123",
-            "slug": "123",
-            "category": "misc",
-            "difficulty": "easy",
-            "points": 100,
-            "description": "",
-            "flag": "flag{test123}",
-            "lat": 58.171839,
-            "lng": 23.747291,
-            "tags": [],
-            "files": [],
-            "hints": [],
-            "positionLocked": false,
-            "visible": true,
-            "createdAt": "2026-03-17T18:18:53.568Z"
-        },
-        {
-            "id": "5594f015-a456-4800-a8c8-4e562039b21f",
-            "title": "Encoded",
-            "slug": "encoded",
-            "category": "Crypto",
-            "difficulty": "easy",
-            "points": 500,
-            "description": "Decode this to get the flag: YmFzaWNfY3J5cHRvXzRfeW91",
-            "flag": "flag{basic_crypto_4_you}",
-            "lat": 58.851781,
-            "lng": 25.407541,
-            "tags": [],
-            "files": [],
-            "hints": [],
-            "positionLocked": false,
-            "visible": true,
-            "createdAt": "2026-03-17T18:55:39.042Z"
+          "id": "hint-crypto-1",
+          "title": "Hint 1",
+          "cost": 15,
+          "content": "<p>Sama võtmega on krüptitud mitu teadet.</p>"
         }
-    ],
-    "solves": [
-        {
-            "id": "63fb635e-d3ff-40b6-ae26-f1894622daae",
-            "userId": "4b9ad37d-e2d5-4869-b618-6706f3a1f250",
-            "challengeId": "717800dd-4c77-48c7-89e8-f7ae06a73394",
-            "points": 10000000000000,
-            "createdAt": "2026-03-17T11:24:51.303Z"
-        },
-        {
-            "id": "34e4931d-def5-496f-972f-0906f266db47",
-            "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
-            "challengeId": "bcb9f955-9dae-40e3-936b-478b11109e18",
-            "points": 100,
-            "createdAt": "2026-03-17T18:19:26.691Z"
-        },
-        {
-            "id": "850c2ff4-38f3-4dfc-a691-9419e73b65a2",
-            "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
-            "challengeId": "chal-web-1",
-            "points": 100,
-            "createdAt": "2026-03-17T18:19:40.250Z"
-        }
-    ],
-    "hintUnlocks": [
-        {
-            "id": "3e70323e-896f-4a2a-9879-b0c5d0fe0148",
-            "userId": "4b9ad37d-e2d5-4869-b618-6706f3a1f250",
-            "challengeId": "chal-crypto-1",
-            "hintId": "hint-crypto-1",
-            "cost": 15,
-            "createdAt": "2026-03-17T11:36:42.540Z"
-        }
-    ],
-    "submissions": [
-        {
-            "id": "cab840c4-b51e-42c0-a25e-8dd894a1e9b9",
-            "userId": "4b9ad37d-e2d5-4869-b618-6706f3a1f250",
-            "challengeId": "717800dd-4c77-48c7-89e8-f7ae06a73394",
-            "submission": "flag{test}",
-            "createdAt": "2026-03-17T11:24:51.303Z",
-            "correct": true
-        },
-        {
-            "id": "e191b044-3e24-4099-8f6a-485ea3e6cf32",
-            "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
-            "challengeId": "chal-web-1",
-            "submission": "flag{test123}",
-            "createdAt": "2026-03-17T18:19:15.914Z",
-            "correct": false
-        },
-        {
-            "id": "bb632dcf-9663-4368-a53e-6ce1264ee467",
-            "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
-            "challengeId": "bcb9f955-9dae-40e3-936b-478b11109e18",
-            "submission": "flag{test123}",
-            "createdAt": "2026-03-17T18:19:26.691Z",
-            "correct": true
-        },
-        {
-            "id": "6a376f8b-de39-43b9-8639-23f9afe93679",
-            "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
-            "challengeId": "chal-web-1",
-            "submission": "flag{tallinn_terminal}",
-            "createdAt": "2026-03-17T18:19:40.250Z",
-            "correct": true
-        }
-    ],
-    "announcements": [
-        {
-            "id": "ab627b72-2d5b-4cc3-9e19-9880f61bb52a",
-            "title": "test",
-            "content": "test",
-            "visible": true,
-            "createdAt": "2026-03-17T11:19:48.274Z",
-            "updatedAt": "2026-03-17T11:19:48.274Z"
-        },
-        {
-            "id": "65d060bf-aca0-4fff-8053-40f0bf305855",
-            "title": "Adminni kasutajast saatsin selle",
-            "content": "Let's gooooooooooooooooooooo",
-            "visible": true,
-            "createdAt": "2026-03-17T19:35:17.336Z",
-            "updatedAt": "2026-03-17T19:35:17.336Z"
-        }
-    ],
-    "teams": []
+      ],
+      "visible": true,
+      "createdAt": "2026-03-17T00:00:00.000Z"
+    },
+    {
+      "id": "chal-pwn-1",
+      "slug": "saaremaa-shell",
+      "title": "Saaremaa Shell",
+      "category": "pwn",
+      "difficulty": "hard",
+      "points": 350,
+      "description": "<p>Ründa vana teenust ning saa shell. Selle challi koordinaat on meelega mere kohal, et testida Tallinna fallbacki.</p>",
+      "flag": "flag{saaremaa_shell}",
+      "lat": 58.95,
+      "lng": 21.6,
+      "tags": [
+        "buffer overflow"
+      ],
+      "files": [],
+      "hints": [],
+      "visible": true,
+      "createdAt": "2026-03-17T00:00:00.000Z"
+    },
+    {
+      "id": "chal-forensics-1",
+      "slug": "tartu-trace",
+      "title": "Tartu Trace",
+      "category": "forensics",
+      "difficulty": "easy",
+      "points": 120,
+      "description": "<p>Analüüsi mäludumpi ja leia kasutatud pahavara püsivusmehhanism.</p>",
+      "flag": "flag{tartu_trace}",
+      "lat": 58.43512,
+      "lng": 27.123373,
+      "tags": [
+        "memory",
+        "volatility"
+      ],
+      "files": [],
+      "hints": [],
+      "visible": true,
+      "createdAt": "2026-03-17T00:00:00.000Z",
+      "positionLocked": false
+    },
+    {
+      "id": "717800dd-4c77-48c7-89e8-f7ae06a73394",
+      "title": "Test",
+      "slug": "test",
+      "category": "misc",
+      "difficulty": "easy",
+      "points": 10000000000000,
+      "description": "tetedtsgdsgdsdg8.3633850452709, 26.711146982134615",
+      "flag": "flag{test}",
+      "lat": 58.386611,
+      "lng": 26.38631,
+      "tags": [
+        "Test",
+        "Admin"
+      ],
+      "files": [],
+      "hints": [],
+      "visible": true,
+      "createdAt": "2026-03-17T11:23:15.721Z",
+      "positionLocked": false
+    },
+    {
+      "id": "bcb9f955-9dae-40e3-936b-478b11109e18",
+      "title": "test123",
+      "slug": "123",
+      "category": "misc",
+      "difficulty": "easy",
+      "points": 100,
+      "description": "",
+      "flag": "flag{test123}",
+      "lat": 58.171839,
+      "lng": 23.747291,
+      "tags": [],
+      "files": [],
+      "hints": [],
+      "positionLocked": false,
+      "visible": true,
+      "createdAt": "2026-03-17T18:18:53.568Z"
+    },
+    {
+      "id": "5594f015-a456-4800-a8c8-4e562039b21f",
+      "title": "Encoded",
+      "slug": "encoded",
+      "category": "Crypto",
+      "difficulty": "easy",
+      "points": 500,
+      "description": "Decode this to get the flag: YmFzaWNfY3J5cHRvXzRfeW91",
+      "flag": "flag{basic_crypto_4_you}",
+      "lat": 58.851781,
+      "lng": 25.407541,
+      "tags": [],
+      "files": [],
+      "hints": [],
+      "positionLocked": false,
+      "visible": true,
+      "createdAt": "2026-03-17T18:55:39.042Z"
+    }
+  ],
+  "solves": [
+    {
+      "id": "63fb635e-d3ff-40b6-ae26-f1894622daae",
+      "userId": "4b9ad37d-e2d5-4869-b618-6706f3a1f250",
+      "challengeId": "717800dd-4c77-48c7-89e8-f7ae06a73394",
+      "points": 10000000000000,
+      "createdAt": "2026-03-17T11:24:51.303Z"
+    },
+    {
+      "id": "34e4931d-def5-496f-972f-0906f266db47",
+      "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
+      "challengeId": "bcb9f955-9dae-40e3-936b-478b11109e18",
+      "points": 100,
+      "createdAt": "2026-03-17T18:19:26.691Z"
+    },
+    {
+      "id": "850c2ff4-38f3-4dfc-a691-9419e73b65a2",
+      "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
+      "challengeId": "chal-web-1",
+      "points": 100,
+      "createdAt": "2026-03-17T18:19:40.250Z"
+    }
+  ],
+  "hintUnlocks": [
+    {
+      "id": "3e70323e-896f-4a2a-9879-b0c5d0fe0148",
+      "userId": "4b9ad37d-e2d5-4869-b618-6706f3a1f250",
+      "challengeId": "chal-crypto-1",
+      "hintId": "hint-crypto-1",
+      "cost": 15,
+      "createdAt": "2026-03-17T11:36:42.540Z"
+    }
+  ],
+  "submissions": [
+    {
+      "id": "cab840c4-b51e-42c0-a25e-8dd894a1e9b9",
+      "userId": "4b9ad37d-e2d5-4869-b618-6706f3a1f250",
+      "challengeId": "717800dd-4c77-48c7-89e8-f7ae06a73394",
+      "submission": "flag{test}",
+      "createdAt": "2026-03-17T11:24:51.303Z",
+      "correct": true
+    },
+    {
+      "id": "e191b044-3e24-4099-8f6a-485ea3e6cf32",
+      "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
+      "challengeId": "chal-web-1",
+      "submission": "flag{test123}",
+      "createdAt": "2026-03-17T18:19:15.914Z",
+      "correct": false
+    },
+    {
+      "id": "bb632dcf-9663-4368-a53e-6ce1264ee467",
+      "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
+      "challengeId": "bcb9f955-9dae-40e3-936b-478b11109e18",
+      "submission": "flag{test123}",
+      "createdAt": "2026-03-17T18:19:26.691Z",
+      "correct": true
+    },
+    {
+      "id": "6a376f8b-de39-43b9-8639-23f9afe93679",
+      "userId": "544983f2-af58-413d-9ad4-88803849ebd5",
+      "challengeId": "chal-web-1",
+      "submission": "flag{tallinn_terminal}",
+      "createdAt": "2026-03-17T18:19:40.250Z",
+      "correct": true
+    }
+  ],
+  "announcements": [
+    {
+      "id": "ab627b72-2d5b-4cc3-9e19-9880f61bb52a",
+      "title": "test",
+      "content": "test",
+      "visible": true,
+      "createdAt": "2026-03-17T11:19:48.274Z",
+      "updatedAt": "2026-03-17T11:19:48.274Z"
+    },
+    {
+      "id": "65d060bf-aca0-4fff-8053-40f0bf305855",
+      "title": "Adminni kasutajast saatsin selle",
+      "content": "Let's gooooooooooooooooooooo",
+      "visible": true,
+      "createdAt": "2026-03-17T19:35:17.336Z",
+      "updatedAt": "2026-03-17T19:35:17.336Z"
+    }
+  ],
+  "teams": []
 }
