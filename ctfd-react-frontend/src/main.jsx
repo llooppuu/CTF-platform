@@ -7,9 +7,11 @@ import "./styles.css";
 import App from "./App";
 import { AppProvider } from "./context/AppContext";
 
+const routerBase = (import.meta.env.BASE_URL || "/").replace(/\/$/, "") || "/";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={routerBase}>
       <AppProvider>
         <App />
       </AppProvider>

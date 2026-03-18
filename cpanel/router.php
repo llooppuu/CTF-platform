@@ -9,12 +9,19 @@ if ($target !== false && str_starts_with($target, realpath($publicRoot) ?: $publ
     return false;
 }
 
+if (str_starts_with($requestPath, '/CTF/api/') || $requestPath === '/CTF/api') {
+    require $publicRoot . '/CTF/api/index.php';
+    return true;
+}
+
 if (str_starts_with($requestPath, '/api/')) {
     require $publicRoot . '/api/index.php';
     return true;
 }
 
-$indexFile = $publicRoot . '/index.html';
+$indexFile = str_starts_with($requestPath, '/CTF/')
+    ? $publicRoot . '/CTF/index.html'
+    : $publicRoot . '/index.html';
 if (is_file($indexFile)) {
     header('Content-Type: text/html; charset=utf-8');
     readfile($indexFile);

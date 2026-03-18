@@ -1,11 +1,12 @@
 const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || "").replace(/\/$/, "");
+const APP_BASE = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
 
 let nonceCache = null;
 let bootstrapCache = null;
 
 function buildUrl(path) {
   if (!API_BASE_URL) {
-    return path;
+    return `${APP_BASE}${path}`;
   }
   return `${API_BASE_URL}${path}`;
 }

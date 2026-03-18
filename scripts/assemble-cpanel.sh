@@ -3,7 +3,8 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 FRONTEND_DIST="$ROOT_DIR/ctfd-react-frontend/dist"
-CPANEL_ROOT="$ROOT_DIR/cpanel/public_html"
+SOURCE_ROOT="$ROOT_DIR/cpanel/public_html"
+CPANEL_ROOT="$ROOT_DIR/cpanel/public_html/CTF"
 
 if [[ ! -d "$FRONTEND_DIST" ]]; then
   echo "Missing frontend build at $FRONTEND_DIST"
@@ -11,7 +12,11 @@ if [[ ! -d "$FRONTEND_DIST" ]]; then
   exit 1
 fi
 
+mkdir -p "$CPANEL_ROOT"
 cp -R "$FRONTEND_DIST"/. "$CPANEL_ROOT"/
+cp "$SOURCE_ROOT/.htaccess" "$CPANEL_ROOT/.htaccess"
+mkdir -p "$CPANEL_ROOT/api"
+cp -R "$SOURCE_ROOT/api"/. "$CPANEL_ROOT/api"/
 cp "$ROOT_DIR/backend/data/db.json" "$CPANEL_ROOT/api/data/db.json"
 
 echo "cPanel bundle refreshed in $CPANEL_ROOT"

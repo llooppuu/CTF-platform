@@ -1,7 +1,8 @@
 const API_BASE = (import.meta.env.VITE_API_BASE_URL || "").replace(/\/$/, "");
+const APP_BASE = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
 
 function buildUrl(path) {
-  return API_BASE ? `${API_BASE}${path}` : path;
+  return API_BASE ? `${API_BASE}${path}` : `${APP_BASE}${path}`;
 }
 
 async function parseResponse(response) {
